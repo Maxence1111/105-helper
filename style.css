@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400;500;600;700;800&display=swap');
+
+
+body {
+    box-sizing: border-box;
+    font-family: 'Sora', sans-serif;
+    margin: 0;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 80px;
+    box-shadow: 1px 4px 35px -2px rgba(192, 192, 192, 0.51);
+}
+
+h1.webtitle {
+    font-size: 1.7rem;
+    font-weight: 400;
+    margin-left: 20px;
+    padding: 0;
+}
+
+div.icons {
+    margin-right: 20px;
+}
+
+img.headericons {
+    width: 30px;
+    height: 30px;
+    margin-left: 12px;
+}
+
+div.box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 95%;
+    max-width: 400px;
+    box-shadow: 0px 1px 20px -3px rgba(102, 102, 102, 0.1);
+    border-radius: 2px;
+    margin-top: 30px;
+}
+
+section.mainsection {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    flex-wrap: wrap;
+}
+
+img.imagestats {
+    position: inherit;
+    right: 0px;
+    width: 100px;
+    margin-top: 30px;
+}
+
+h1.boxtitle {
+    padding: 15px;
+    line-height: 26px;
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin: 0;
+}
+
+div.writtenstats {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: 12px;
+}
+
+div.data {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+h2.data {
+    margin: 0;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+div.ustats {
+    display: flex;
+    flex-direction: column;
+}
+
+span.datavalue {
+    font-weight: 200;
+    font-size: 1.2rem;
+}
+
+span.specs {
+    font-weight: 200;
+    font-size: 1.3rem;
+    color: #868686;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+#stats {
+    background-image: url('./assets/background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 1px solid #e0e0e0;
+    box-shadow: none; 
+}
+
+@media screen and (max-width: 360px) {
+    div.icons {
+        margin-right: 10px;
+    }
+    #stats {
+        background-image: url('./assets/minibackground.png');
+    }
+    #mobile {
+        padding-bottom: 10px;
+    }
+}
