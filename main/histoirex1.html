@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>Aide & Entrainements</title>
+    <script src="https://kit.fontawesome.com/7df5c9bf6c.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <h1 class="webtitle">Entrainements</h1>
+        <div class="icons">
+            <img src="../assets/settings.png" alt="settings" class="headericons">
+            <a href="../"><img src="../assets/home.png" alt="home" class="headericons"></a>
+        </div>
+    </header>
+    <section style="align-items: center;" class="mainsection">
+        <div id="preview">
+            <h1 class="warninfo">Vous allez commencer l'entrainement</h1>
+            <h2 class="consigne">Trouver le nom des métropoles qui vont s'afficher sur une carte</h2>
+            <button onclick="start('hgx1')" style="margin-top: 5%;" class="start">Commencer<i class="fa-solid fa-play"></i></i></button>
+        </div>
+        <div id="exercise">
+            <h2 style="margin-top: 20%;" class="consigne">Trouver le nom de ce mégapole</h2>
+            <img id="img" src="" alt="mégapole">
+            <input oninput="onclickhandler(this)" type="text" id="answer" placeholder="Réponse">
+            <button style="margin-top: 5%;" id="next" class="start">Continuer<i class="fa-solid fa-angles-right"></i></button>
+        </div>
+    </section>
+    <script src="../index.js"></script>
+</body>
+</html>
