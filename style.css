@@ -109,6 +109,7 @@ span.specs {
 
 button.start {
     font-family: sora;
+    cursor: pointer;
     width: 55%;
     height: 45px;
     border: none;
@@ -202,8 +203,9 @@ input {
 
 #img {
     width: 95%;
-    margin-top: 5%;
-    margin-bottom: 5%;
+    max-width: 400px;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 input::placeholder {
