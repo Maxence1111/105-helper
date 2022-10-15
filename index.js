@@ -7,32 +7,33 @@ function storagecheck() {
 	if (localStorage.getItem("stats1") === null || localStorage.getItem('stats2') === null || localStorage.getItem('stats3') === null || localStorage.getItem('stats4') === null) {
 		console.log("No stats found, creating new stats");
 		localStorage.setItem("stats1", 0);
-		localStorage.setItem("stats2", exemplearray);
+		localStorage.setItem("stats2", 0);
 		localStorage.setItem("stats3", 0);
 		localStorage.setItem("stats4", 0);
+		localStorage.setItem("stats5", 0);
 	}
 }
 if (location.pathname == '/') {
 	time = fmtMSS(localStorage.getItem("stats4"));
-  let notes = localStorage.getItem('stats2');
-	
-	console.log("Stats found, loading stats");
+	console.log("Stats found, loading stats"); 
+	if (localStorage.getItem('stats5') > 0) {
+		let average = (localStorage.getItem('stats5') / localStorage.getItem('stats1')).toFixed(2);
+		document.getElementById("stat2value").innerHTML = average + '/20';
+	}
 	document.getElementById("stat1value").innerHTML = localStorage.getItem("stats1");
-	document.getElementById("stat2value").innerHTML = '--/20';
 	document.getElementById("stat3value").innerHTML = localStorage.getItem("stats3") + '/20';
 	document.getElementById("stat4value").innerHTML = time;
 }
 
-function start() {
+function start(param) {
 	startchrono();
 	document.getElementById("preview").style.display = "none";
 	document.getElementById("exercise").style.display = "flex";
-	random();
+	random(param);
   listener();
 }
 
 let hgx1 = ['https://upload.maxence.live/hcbjou.png', 'berlin', "https://upload.maxence.live/4amyla.png", `new york`, "https://upload.maxence.live/jewm0q.png", `londres`, "https://upload.maxence.live/6j0pf8.png", `paris`];
-
 z = '';
 
 function onclickhandler(e) {
@@ -42,9 +43,10 @@ function onclickhandler(e) {
 const initiallength = hgx1.length / 2;
 let answer = '';
 note = 0;
-
-function random() {
+function random(param) {
 	if (hgx1.length > 0) {
+		y = JSON.stringify(param);
+		console.log(y);
 		let input = document.getElementById('answer');
 		input.value = '';
 		var range = hgx1.length;
@@ -59,7 +61,7 @@ function random() {
 
 function listener() {
 let element = document.getElementById("next");
-element.addEventListener("click", function() {
+element.addEventListener("click" , function() {
 	if (z.toLowerCase() === answer) {
 		console.log("Correct");
 		note = note + 1;
@@ -76,9 +78,13 @@ element.addEventListener("click", function() {
 function end(param) {
 	addtrain();
 	addtime();
+	document.getElementById("exercise").style.display = "none";
+	document.getElementById("end").style.display = "flex";
 	if (note > 0) {
 		finalnote = (param * 20) / initiallength;
+		document.getElementById("finalscore").innerHTML = finalnote;
 		checknotes(finalnote);
+		compteur(finalnote);
 	}
 }
 // start of site time //
@@ -98,6 +104,7 @@ function addtime() {
 	console.log('Temps:' + finalvalue);
 	x = current + finalvalue;
 	localStorage.setItem('stats4', x);
+	document.getElementById("finaltime").innerHTML = value;
 }
 // end of site time //
 
@@ -117,3 +124,11 @@ function checknotes(param) {
 	}
 }
 // end of checknotes //
+
+// start of compteur //
+function compteur(param) {
+	let all = parseFloat(localStorage.getItem('stats5'));
+	x = all + param;
+	localStorage.setItem('stats5', x);
+}
+// end of compteur //
