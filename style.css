@@ -37,7 +37,7 @@ img.headericons {
 div.box {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     width: 95%;
     max-width: 400px;
     box-shadow: 0px 1px 20px -3px rgba(102, 102, 102, 0.1);
@@ -47,10 +47,9 @@ div.box {
 
 section.mainsection {
     display: flex;
-    flex-direction: row;
     justify-content: center;
     width: 100%;
-    height: 100%;
+    height: calc(100vh - 170px);
     flex-wrap: wrap;
 }
 
@@ -154,9 +153,10 @@ i.fa-regular {
     background-size: cover;
     border: 1px solid #e0e0e0;
     box-shadow: none; 
+    margin-top: 35px;
 }
 
-@media screen and (max-width: 365px) {
+@media screen and (max-width: 390px) {
     div.icons {
         margin-right: 10px;
     }
@@ -167,6 +167,14 @@ i.fa-regular {
         padding-bottom: 10px;
     }
 }
+
+@media screen and (max-width: 800px) {
+    div.box {
+        box-shadow: none;
+        border-bottom: 1px solid #e0e0e0;
+        margin-top: 10px;
+    }
+ }
 
 @media screen and (min-width: 800px) {
    div.box {
@@ -194,8 +202,9 @@ i.fa-solid {
 input {
     display: flex;
     text-align: center;
+    font-family: sora;
     font-family: poppins;
-    width: 250px;
+    width: 60%;
     height: 30px;
     border: 2px solid #e3e3e3;
     border-radius: 5px;
@@ -204,8 +213,10 @@ input {
 #img {
     width: 95%;
     max-width: 400px;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    background: transparent url(./assets/refresh.png) no-repeat scroll center center;
 }
 
 input::placeholder {
@@ -226,7 +237,8 @@ h1.warninfo {
     text-align: center;
     font-size: 1.4rem;
     font-weight: 300;
-    margin-top: 20%;
+    margin: 0;
+    margin-bottom: 20px;
 }
 
 h2.consigne {
@@ -238,6 +250,66 @@ h2.consigne {
     padding: 10px;
 }
 
+div.flex-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 95%;
+    max-width: 400px;
+}
+
+#next {
+    height: 36px;
+    width: 40%;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    margin-left: 13px;
+}
+
 #end {
     display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+div.alert {
+    display:none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 85px;
+    background-color: #D63031;
+    font-size: 1.2rem;
+    color: white;
+    width: 100%;
+    height: 50px;
+}
+
+div.flex-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+div.progress {
+    width: 100%;
+    height: 5px;
+    background-color: #4a69bd;
+    transform: scaleX(.0);
+    transform-origin: left;
+    transition: 1000ms ease-in-out transform;
+}
+
+#margin {
+    margin: 3px
+}
+
+div.rowinput {
+    width: 90%;
+    display: flex;
+    margin: 20px;
 }

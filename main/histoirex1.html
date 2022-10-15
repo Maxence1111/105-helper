@@ -12,25 +12,31 @@
     <header>
         <h1 class="webtitle">Entrainements</h1>
         <div class="icons">
-            <img src="../assets/settings.png" alt="settings" class="headericons">
+            <a href="../settings.html"><img src="../assets/settings.png" alt="settings" class="headericons"></a>
             <a href="../"><img src="../assets/home.png" alt="home" class="headericons"></a>
         </div>
     </header>
+    <div id="progress" class="progress"></div>
     <section style="align-items: center;" class="mainsection">
         <div id="preview">
-            <h1 class="warninfo">Vous allez commencer l'entrainement</h1>
-            <h2 class="consigne">Trouver le nom des métropoles qui vont s'afficher sur une carte</h2>
+            <h1 class="warninfo">Trouver le nom des mégalopoles qui vont s'afficher sur une carte</h1>
+            <h2 class="consigne">Minuscule ou Majuscule, vous pouvez écrire le nom local, exemple: mumbai, ou le nom français, exemple: bombay. Ne jamais mettre d'accents.</h2>
             <button onclick="start('hgx1')" style="margin-top: 5%;" class="start">Commencer<i class="fa-solid fa-play"></i></i></button>
         </div>
         <div id="exercise">
-            <h2 style="margin-top: 120px;" class="consigne">Trouver le nom de cet mégapole</h2>
+            <h2 class="consigne">Trouver le nom de cette mégapole</h2>
             <img id="img" src="" alt="mégapole">
-            <input oninput="onclickhandler(this)" type="text" id="answer" placeholder="Réponse">
-            <button style="margin-top: 30px; max-width: 300px;" id="next" class="start">Continuer<i class="fa-solid fa-angles-right"></i></button>
+            <div id="flex-row" class="flex-row">
+                <input oninput="onclickhandler(this)" type="text" id="answer" placeholder="Réponse">
+                <button id="next" class="start">Continuer</button>
+            </div>
         </div>
         <div id="end">
-            <h2 class="consigne">Bravo vous avez obtenue le score de <spam id="finalscore">--</spam>/20 en un temps de <span id="finaltime">--</span>s</h2>
+            <h2 class="consigne">Bravo vous avez obtenue le score de <spam id="finalscore">0</spam>/20 en un temps de <span id="finaltime">--</span>s</h2>
+                <a style="display: contents;" href="./histoirex1.html"><button style="margin: 15px;" class="start">Recommencer</button></a>
+                <a style="display: contents;" href="../"><button style="background-color: #878787;" class="start">Accueil</button></a>
         </div>
+        <div id="alert" class="alert"></div>
     </section>
     <script src="../index.js"></script>
 </body>

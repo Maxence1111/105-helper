@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>Aide & Entrainements</title>
+    <script src="https://kit.fontawesome.com/7df5c9bf6c.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <h1 class="webtitle">Entrainements</h1>
+        <div class="icons">
+            <a href="../settings.html"><img src="../assets/settings.png" alt="settings" class="headericons"></a>
+            <a href="../"><img src="../assets/home.png" alt="home" class="headericons"></a>
+        </div>
+    </header>
+    <div id="progress" class="progress"></div>
+    <section style="align-items: center;" class="mainsection">
+        <div id="preview">
+            <h1 class="warninfo">Résolution d'une équation second degrés</h1>
+            <h2 class="consigne">Veuillez entrer a, b, c</h2>
+            <div class="rowinput">
+                <input oninput="aonclickhandler(this)" id="margin" type="number" placeholder="Entrer A">
+                <input oninput="bonclickhandler(this)" id="margin" type="number" placeholder="Entrer B">
+                <input oninput="conclickhandler(this)" id="margin" type="number" placeholder="Entrer C">
+            </div>
+            <button onclick="deg2(1, a, b, c)" class="start">Lancer<i class="fa-solid fa-play"></i></i></button>
+        </div>
+        <div id="exercise">
+            <h2 id="step" class="warninfo">Commencer par le calcul de</h2>
+            <h2 id="resultat" class="consigne">Delta</h2>
+            </div>
+        </div>
+        <div id="end">
+            <h2 class="consigne">Bravo vous avez obtenue le score de <spam id="finalscore">0</spam>/20 en un temps de <span id="finaltime">--</span>s</h2>
+                <a style="display: contents;" href="./histoirex1.html"><button style="margin: 15px;" class="start">Recommencer</button></a>
+                <a style="display: contents;" href="../"><button style="background-color: #878787;" class="start">Accueil</button></a>
+        </div>
+        <div id="alert" class="alert"></div>
+    </section>
+    <script src="../index.js"></script>
+</body>
+</html>
