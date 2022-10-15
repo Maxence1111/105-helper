@@ -67,7 +67,8 @@ function random() {
 		var random = Math.floor(Math.random() * range / 2) * 2;
 		document.getElementById("img").src = hgx1[random];
 		let loaded = document.getElementById("img");
-		loaded.onload = function () {document.getElementById('flex-row').style.visibility = "visible";}
+		loaded.onload = function () {document.getElementById('flex-row').style.visibility = "visible"; }
+		
 		answer = hgx1[random + 1]
 		console.log(answer)
 		hgx1.splice(random, 2);
@@ -79,7 +80,6 @@ function random() {
 function listener() {
 let element = document.getElementById("next");
 element.addEventListener("click" , function() {
-	console.log("hiding");
 	document.getElementById('flex-row').style.visibility = 'hidden';
 	finalanswer = z.toLowerCase();
 	if (answer.includes(finalanswer) === true && z !== '' && z !== 'ou') {
@@ -91,31 +91,17 @@ element.addEventListener("click" , function() {
 		console.log("Incorrect");
 		incorrect(answer);
 		random();
+	}
+});
+let input = document.getElementById("answer");
+input.addEventListener("keypress", function(event) {
+	if (event.key === 'Enter') {
+		document.getElementById("next").click();
 	}
 });
 }
 
-let input = document.getElementById("answer");
 
-
-input.addEventListener("keypress", function(event) {
-  if (event.key === "Enter") {
-	console.log("hiding");
-	document.getElementById('flex-row').style.visibility = 'hidden';
-	finalanswer = z.toLowerCase();
-	if (answer.includes(finalanswer) === true && z !== '' && z !== 'ou') {
-		console.log("Correct");
-		note = note + 1;
-		random();
-		console.log('Note ' + note);
-	} else {
-		console.log("Incorrect");
-		incorrect(answer);
-		random();
-	}
-    
-  }
-});
 
 
 function incorrect(param) {
